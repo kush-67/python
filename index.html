@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Flower Classifier</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #eaf4fc;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin-top: 60px;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+        .prediction {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h3 class="text-center mb-4">Iris Flower Classifier</h3>
+            <form method="POST">
+                <input type="text" class="form-control" name="sepal_length" placeholder="Sepal Length (cm)" required>
+                <input type="text" class="form-control" name="sepal_width" placeholder="Sepal Width (cm)" required>
+                <input type="text" class="form-control" name="petal_length" placeholder="Petal Length (cm)" required>
+                <input type="text" class="form-control" name="petal_width" placeholder="Petal Width (cm)" required>
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+            {% if prediction %}
+            <p class="prediction mt-3">{{ prediction }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
